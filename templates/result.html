@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Price Result</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📦 Product Analysis</h2>
+
+<img src="{{image}}" width="200">
+
+<h3>{{title}}</h3>
+
+<p><b>Price:</b> £{{price}}</p>
+<p><b>Rating:</b> {{rating}}</p>
+<p><b>Availability:</b> {{availability}}</p>
+
+<hr>
+
+<h3>📊 Price Statistics</h3>
+
+<p><b>Highest Price:</b> {{highest}}</p>
+<p><b>Lowest Price:</b> {{lowest}}</p>
+<p><b>Average Price:</b> {{average}}</p>
+
+<p><b>Trend:</b> {{trend}}</p>
+
+<h2 style="color:green">{{recommendation}}</h2>
+
+{% if alert %}
+<div style="background:#ffef96;padding:15px;border-radius:5px;margin:15px;">
+🔔 {{alert}}
+</div>
+{% endif %}
+
+<hr>
+
+<h3>📈 Price Trend Meter</h3>
+
+<div class="meter-container">
+
+{% if trend == "Increasing" %}
+
+<div class="meter-bar increasing">
+Price Increasing
+</div>
+
+{% elif trend == "Stable" %}
+
+<div class="meter-bar stable">
+Price Stable
+</div>
+
+{% else %}
+
+<div class="meter-bar decreasing">
+Price Decreasing
+</div>
+
+{% endif %}
+
+</div>
+
+<br>
+
+<a href="/home">
+<button>⬅ Back Home</button>
+</a>
+
+</div>
+
+</body>
+</html>

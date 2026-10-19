@@ -1,0 +1,90 @@
+body{
+font-family:Arial;
+background:linear-gradient(120deg,#1e3c72,#2a5298);
+color:white;
+text-align:center;
+margin:0;
+}
+
+.container{
+background:white;
+color:black;
+padding:30px;
+margin:50px auto;
+width:500px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+animation:fadeIn 1.2s ease-in-out;
+}
+
+button{
+background:#2a5298;
+color:white;
+border:none;
+padding:12px 20px;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e3c72;
+transform:scale(1.05);
+}
+
+input{
+padding:10px;
+width:70%;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid gray;
+padding:8px;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* PRICE TREND METER */
+
+.meter-container{
+width:80%;
+margin:20px auto;
+background:#ddd;
+border-radius:20px;
+height:30px;
+overflow:hidden;
+}
+
+.meter-bar{
+height:100%;
+text-align:center;
+color:white;
+font-weight:bold;
+line-height:30px;
+}
+
+.increasing{
+width:100%;
+background:#e74c3c;
+}
+
+.stable{
+width:50%;
+background:#f1c40f;
+}
+
+.decreasing{
+width:25%;
+background:#2ecc71;
+}

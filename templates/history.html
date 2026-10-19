@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Price History</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<style>
+
+.table-container{
+max-height:400px;
+overflow-y:auto;
+margin-top:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+color:black;
+}
+
+th{
+background:#2a5298;
+color:white;
+padding:10px;
+}
+
+td{
+padding:10px;
+text-align:center;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+tr:hover{
+background:#dfe9f3;
+transform:scale(1.01);
+transition:0.2s;
+}
+
+.high{
+color:red;
+font-weight:bold;
+}
+
+.medium{
+color:orange;
+font-weight:bold;
+}
+
+.low{
+color:green;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📜 Product Price History</h2>
+
+{% if rows %}
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>Timestamp</th>
+<th>Price</th>
+<th>Status</th>
+</tr>
+
+{% for r in rows %}
+
+<tr>
+
+<td>{{r[0]}}</td>
+
+<td>£{{r[1]}}</td>
+
+{% set price = r[1]|float %}
+
+{% if price > 55 %}
+<td class="high">High</td>
+
+{% elif price > 50 %}
+<td class="medium">Medium</td>
+
+{% else %}
+<td class="low">Low</td>
+
+{% endif %}
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% else %}
+
+<p>No price history available yet.</p>
+
+{% endif %}
+
+<br>
+
+<a href="/home">⬅ Back Home</a>
+
+</div>
+
+</body>
+</html>
